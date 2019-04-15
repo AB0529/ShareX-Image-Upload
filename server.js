@@ -26,3 +26,5 @@ app.post(`/api/upload`, upload.single('d'), (req, res) => {
   fs.writeFileSync(`${config.path}/${name}.png`, req.file.buffer);
   return res.end(`${config.url}/${name}.png`);
 });
+
+app.listen(port, () => console.log(`App listening on port ${port}`));
